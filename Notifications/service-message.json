@@ -1,0 +1,76 @@
+﻿{
+    "@context": "https://schema.org/extensions",
+    "@type": "MessageCard",
+    "themeColor": "EA4300",
+    "title": "<div>$HOSTGROUPNAME$ - Alerte - ETAT $SERVICESTATE$ du service $SERVICEDESC$ sur l'hôte $HOSTNAME$</div>",
+    "summary": "Alerte Centreon",
+    "sections": [
+        {
+            "activityTitle": "**$SERVICEOUTPUT$**"
+        },
+        {
+            "facts": [
+                {
+                    "name": "Type de notification",
+                    "value": "<div>$NOTIFICATIONTYPE$</div>"
+                },
+                {
+                    "name": "Service",
+                    "value": "<div>$SERVICEDESC$</div>"
+                },
+                {
+                    "name": "Hôte",
+                    "value": "<div>$HOSTNAME$</div>"
+                },
+                {
+                    "name": "Adresse IP",
+                    "value": "<div>$HOSTADDRESS$</div>"
+                },
+                {
+                    "name": "Description Hôte",
+                    "value": "<div>$HOSTALIAS$</div>"
+                },
+                {
+                    "name": "Etat",
+                    "value": "<div>$SERVICESTATE$</div>"
+                },
+                {
+                    "name": "Horodatage",
+                    "value": "<div>$DATE$ $TIME$</div>"
+                }
+            ]
+        }
+    ],
+    "potentialAction": [
+        {
+            "@type": "OpenUri",
+            "name": "Acquitter via Centreon",
+            "targets": [
+                {
+                    "os": "default",
+                    "uri": "https://mycentreonserver.xyz/centreon"
+                }
+            ]
+        },
+        {
+            "@type": "OpenUri",
+            "name": "Voir Wiki Hôte",
+            "targets": [
+                {
+                    "os": "default",
+                    "uri": "https://mycentreonserver.xyz/centreon/$HOSTNOTESURL$"
+                }
+            ]
+        },
+        {
+            "@type": "OpenUri",
+            "name": "Voir Wiki Service",
+            "targets": [
+                {
+                    "os": "default",
+                    "uri": "https://mycentreonserver.xyz/centreon/$SERVICENOTESURL$"
+                }
+            ]
+        }
+    ]
+}
