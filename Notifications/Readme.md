@@ -1,4 +1,4 @@
-﻿# Notify MS Teams #
+﻿# Notify MS Teams with Centreon #
 
 ## Prerequisites ##
 - You need to have MS Teams :)
